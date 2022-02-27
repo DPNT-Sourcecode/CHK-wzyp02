@@ -8,8 +8,10 @@ import java.util.Set;
 public class CheckoutSolution {
     public Integer checkout(String skus) {
         Set<String> skusKey = new HashSet<>();
+        skusKey.add("A");
+        skusKey.add("B");
+        skusKey.add("C");
+        skusKey.add("D");
         
     }
 }
-
-
