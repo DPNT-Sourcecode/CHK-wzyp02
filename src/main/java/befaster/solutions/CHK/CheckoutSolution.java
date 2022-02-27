@@ -93,16 +93,29 @@ public class CheckoutSolution {
             res += (countSTY / 3) * 45;
             countX += countSTY % 3;
             res += (countX / 3) * 45 + (countX % 3) * 17;
-        } else if(countSTY > 0) {
+        } else if(countX == 0 && countSTY > 0 && countZ > 0) {
             res += (countZ / 3) * 45;
             countSTY += countZ % 3;
-            res += (countSTY / 3) * 45 + (countX % 3) * 20;
-        } else if(){
-
+            res += (countSTY / 3) * 45 + (countSTY % 3) * 20;
+        } else if(countX > 0 && countSTY == 0 && countZ > 0) {
+            res += (countZ / 3) * 45;
+            countX += countZ % 3;
+            res += (countX / 3) * 45 + (countX % 3) * 17;
+        } else if(countX > 0 && countSTY > 0 && countZ == 0) {
+            res += (countSTY / 3) * 45;
+            countX += countSTY % 3;
+            res += (countX / 3) * 45 + (countX % 3) * 17;
+        } else if(countX == 0 && countSTY == 0 && countZ > 0){
+            res += (countZ / 3) * 45 + (countX % 3) * 21;;
+        } else if(countX == 0 && countSTY > 0 && countZ == 0){
+            res += (countSTY / 3) * 45 + (countSTY % 3) * 20;;
+        } else if(countX > 0 && countSTY == 0 && countZ == 0){
+            res += (countX / 3) * 45 + (countX % 3) * 17;;
         }
         return res;
     }
 }
+
 
 
 
