@@ -89,10 +89,13 @@ public class CheckoutSolution {
         int countX = counts.getOrDefault('X', 0);
         if(countZ > 0) {
             res += (countZ / 3) * 45;
-            
+            if(countSTY >= 3 - (countZ % 3)) {
+                
+            }
         }
         return res;
     }
 }
+
 
 
