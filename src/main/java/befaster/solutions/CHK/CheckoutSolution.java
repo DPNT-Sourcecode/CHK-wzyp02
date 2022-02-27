@@ -60,28 +60,50 @@ public class CheckoutSolution {
     private void calculatePrice(Map<Character, Integer> counts) {
         int res = 0;
         for(char sku : counts.keySet()) {
-            int count = counts.get(sku);
+            int count = counts.get(sku) > 0 ? counts.get(sku) : 0;
             if(sku == 'A') {
                 int count5A =  count / 5;
                 int count3A = (count - count5A * 5) / 3;
-                int rest = count - count5A * 5 - count3A * 3;
-                res += count5A * 200 + count3A * 130 + rest * 50;
+                int restA = count - count5A * 5 - count3A * 3;
+                res += count5A * 200 + count3A * 130 + restA * 50;
             } else if(sku == 'B') {
-                if(count > 0) {
-                    res += (count / 2) * 45 + (count % 2) * 30;
-                }
-            } else if(sku == 'C' || sku == 'G') {
+                res += (count / 2) * 45 + (count % 2) * 30;
+            } else if(sku == 'C' || sku == 'G' || sku == 'S') {
                 res += 20 * count;
-            } else if(sku == 'D'){
+            } else if(sku == 'D' || sku == 'M'){
                 res += 15 * count;
-            } else if(sku == 'E'){
+            } else if(sku == 'E' || sku == 'N'){
                 res += 40 * count;
             } else if(sku == 'F'){
                 res += (count / 3) * 20 + (count % 3) * 10;
-            } else if(sku == 'G'){
-                res += c;
+            } else if(sku == 'H'){
+                int count10H =  count / 10;
+                int count5H =  (count - count10H * 10) / 5;
+                int restH = count - count10H * 10 - count5H * 5;
+                res += count10H * 80 + count5H * 45 + restH * 10;
+            } else if(sku == 'I'){
+                res += 35 * count;
+            } else if(sku == 'J'){
+                res += 60 * count;
+            } else if(sku == 'K'){
+                res += (count / 2) * 150 + (count % 2) * 80;
+            } else if(sku == 'L'){
+                res += 90 * count;
+            } else if(sku == 'O'){
+                res += 10 * count;
+            } else if(sku == 'P'){
+                res += (count / 5) * 200 + (count % 5) * 50;
+            } else if(sku == 'Q'){
+                res += (count / 3) * 80 + (count % 3) * 50;
+            } else if(sku == 'R'){
+                res += 50 * count;
+            } else if(sku == 'S'){
+                res += 30 * count;
+            } else if(sku == 'S'){
+                res += 30 * count;
             }
         }
     }
 }
+
 
