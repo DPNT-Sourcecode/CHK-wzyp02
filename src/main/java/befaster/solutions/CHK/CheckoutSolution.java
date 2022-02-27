@@ -72,7 +72,7 @@ public class CheckoutSolution {
             } else if(sku == 'P'){
                 res += (count / 5) * 200 + (count % 5) * 50;
             } else if(sku == 'Q'){
-                res += (count / 3) * 80 + (count % 3) * 50;
+                res += (count / 3) * 80 + (count % 3) * 30;
             } else if(sku == 'R' || sku == 'Z'){
                 res += 50 * count;
             } else if(sku == 'S'){
@@ -89,6 +89,7 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
 
 
