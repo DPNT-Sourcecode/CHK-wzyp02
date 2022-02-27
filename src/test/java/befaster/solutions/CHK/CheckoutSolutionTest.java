@@ -42,4 +42,3 @@ public class CheckoutSolutionTest {
 		Assert.assertEquals(Integer.valueOf(40 + 10), checkoutSolution.checkout("FFFFFFF"));
 	}
 }
-
