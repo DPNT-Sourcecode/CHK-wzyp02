@@ -19,18 +19,21 @@ public class CheckoutSolution {
         for(char sku : counts.keySet()) {
             int count = counts.get(sku);
             if(sku == 'A') {
-                res += (count / 3) * 130 + (count % 3) * 50;
+                res += (count / 5) * 200 + (count - ((count / 5) * 5) % 3) * 50;
             } else if(sku == 'B') {
                 res += (count / 2) * 45 + (count % 2) * 30;
             } else if(sku == 'C') {
                 res += 20 * count;
-            } else {
+            } else if(sku == 'D'){
                 res += 15 * count;
+            } else {
+                res += 40 * count;
             }
         }
         return res;
     }
 }
+
 
 
 
