@@ -32,6 +32,3 @@ public class CheckoutSolutionTest {
 		Assert.assertEquals(Integer.valueOf(180 + 15 + 80), checkoutSolution.checkout("AAAADEE"));
 	}
 }
-
-
-
