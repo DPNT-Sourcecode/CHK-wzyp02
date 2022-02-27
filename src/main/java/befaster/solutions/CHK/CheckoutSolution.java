@@ -90,12 +90,15 @@ public class CheckoutSolution {
         if(countZ > 0) {
             res += (countZ / 3) * 45;
             if(countSTY >= 3 - (countZ % 3)) {
+                res += ((countSTY + (countZ % 3)) / 3) * 45;
+            } else {
                 
             }
         }
         return res;
     }
 }
+
 
 
 
