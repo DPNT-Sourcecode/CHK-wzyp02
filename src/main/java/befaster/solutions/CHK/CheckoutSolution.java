@@ -87,17 +87,23 @@ public class CheckoutSolution {
         int countZ = counts.getOrDefault('Z', 0);
         int countSTY = counts.getOrDefault('S', 0) + counts.getOrDefault('T', 0) + counts.getOrDefault('Y', 0);
         int countX = counts.getOrDefault('X', 0);
-        if(countZ > 0) {
+        if(countX > 0) {
             res += (countZ / 3) * 45;
-            if(countSTY >= 3 - (countZ % 3)) {
-                res += ((countSTY + (countZ % 3)) / 3) * 45;
-            } else {
-                
-            }
+            countSTY += countZ % 3;
+            res += (countSTY / 3) * 45;
+            countX += countSTY % 3;
+            res += (countX / 3) * 45 + (countX % 3) * 17;
+        } else if(countSTY > 0) {
+            res += (countZ / 3) * 45;
+            countSTY += countZ % 3;
+            res += (countSTY / 3) * 45 + (countX % 3) * 20;
+        } else if(){
+
         }
         return res;
     }
 }
+
 
 
 
