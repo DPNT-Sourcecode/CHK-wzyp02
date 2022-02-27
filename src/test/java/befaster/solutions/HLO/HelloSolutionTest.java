@@ -14,6 +14,7 @@ public class HelloSolutionTest {
 
 	@Test
 	public void testHello() {
-		Assert.assertEquals("Hello, test", hello.hello("test"));
+		Assert.assertEquals("Hello, test!", hello.hello("test"));
 	}
 }
+
