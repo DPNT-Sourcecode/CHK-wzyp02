@@ -26,6 +26,12 @@ public class CheckoutSolutionTest {
 	public void testCheckout1() {
 		Assert.assertEquals(Integer.valueOf(200 + 45 + 50 + 130 + 15 + 80), checkoutSolution.checkout("AAAAABBABAAADEE"));
 	}
+
+	@Test
+	public void testCheckout2() {
+		Assert.assertEquals(Integer.valueOf(180 + 15 + 80), checkoutSolution.checkout("AAAADEE"));
+	}
 }
+
 
 

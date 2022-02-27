@@ -26,7 +26,9 @@ public class CheckoutSolution {
                 int rest = count - count5 * 5 - count3 * 3;
                 res += count5 * 200 + count3 * 130 + rest * 50;
             } else if(sku == 'B') {
-                res += (count / 2) * 45 + (count % 2) * 30;
+                if(count > 0) {
+                    res += (count / 2) * 45 + (count % 2) * 30;
+                }
             } else if(sku == 'C') {
                 res += 20 * count;
             } else if(sku == 'D'){
@@ -38,6 +40,7 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
 
 
