@@ -91,6 +91,12 @@ public class CheckoutSolution {
         if(countSTY >= 3 - (countZ % 3)) {
             countSTY += countZ % 3;
             res += (countSTY / 3) * 45;
+            if(countX >= 3 - (countSTY % 3)) {
+                countX += countSTY % 3;
+                res += (countX / 3) * 45 + (countX % 3) * 17;
+            } else {
+                res += (countSTY % 3) * 20 + countX * 17;
+            }
         } else if(countX >= 3 - countSTY - (countZ % 3)){
             countX += countSTY + (countZ % 3);
             res += (countX / 3) * 45 + (countX % 3) * 17;
@@ -100,4 +106,5 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
