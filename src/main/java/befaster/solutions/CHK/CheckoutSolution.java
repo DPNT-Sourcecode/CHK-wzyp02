@@ -7,12 +7,15 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
         Map<Character, Integer> counts = new HashMap<>();
         for(char c : skus.toCharArray()) {
-            if(c >= 'A' && c <= 'F') {
+            if(c >= 'A' && c <= 'Z') {
                 int count = counts.getOrDefault(c, 0);
                 counts.put(c, count + 1);
             } else {
                 return -1;
             }
+        }
+        if(counts.get('B') != null && counts.get('E') != null) {
+            counts.put('B', counts.get('B') - (counts.get('E') / 2));
         }
         if(counts.get('B') != null && counts.get('E') != null) {
             counts.put('B', counts.get('B') - (counts.get('E') / 2));
@@ -42,5 +45,6 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
 
