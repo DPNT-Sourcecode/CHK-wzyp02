@@ -14,6 +14,7 @@ public class CheckoutSolution {
                 return -1;
             }
         }
+        counts.put('B', counts.get('B') - (counts.get('E') / 2));
         int res = 0;
         for(char sku : counts.keySet()) {
             int count = counts.get(sku);
@@ -30,6 +31,7 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
 
 
