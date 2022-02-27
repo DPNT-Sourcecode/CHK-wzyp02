@@ -7,7 +7,7 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
         Map<Character, Integer> counts = new HashMap<>();
         for(char c : skus.toCharArray()) {
-            if(c >= 'A' && c <= 'E') {
+            if(c >= 'A' && c <= 'F') {
                 int count = counts.getOrDefault(c, 0);
                 counts.put(c, count + 1);
             } else {
@@ -40,3 +40,4 @@ public class CheckoutSolution {
         return res;
     }
 }
+
