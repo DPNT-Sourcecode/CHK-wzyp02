@@ -19,7 +19,10 @@ public class CheckoutSolution {
         for(char sku : counts.keySet()) {
             int count = counts.get(sku);
             if(sku == 'A') {
-                res += (count / 5) * 200 + (count - ((count / 5) * 5) % 3) * 50;
+                int count5 =  count / 5;
+                int count3 = (count - count5 * 5) / 3;
+                int rest = count - count5 * 5 - count3 * 3;
+                res += count5 * 200 + count3 * 130 + rest * 50;
             } else if(sku == 'B') {
                 res += (count / 2) * 45 + (count % 2) * 30;
             } else if(sku == 'C') {
@@ -33,6 +36,7 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
 
 

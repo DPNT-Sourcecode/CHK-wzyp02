@@ -14,11 +14,12 @@ public class CheckoutSolutionTest {
 
 	@Test
 	public void testInvalidInput() {
-		Assert.assertEquals(Integer.valueOf(-1), checkoutSolution.checkout("E"));
+		Assert.assertEquals(Integer.valueOf(-1), checkoutSolution.checkout("F"));
 	}
 
 	@Test
 	public void testCheckout() {
-		Assert.assertEquals(Integer.valueOf(180 + 45 + 15), checkoutSolution.checkout("AABBAAD"));
+		Assert.assertEquals(Integer.valueOf(200 + 45 + 50 + 130 + 15 + 80), checkoutSolution.checkout("AAAAABBABAAADEE"));
 	}
 }
+
