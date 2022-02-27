@@ -33,7 +33,12 @@ public class CheckoutSolution {
         if(counts.get('Q') != null && counts.get('R') != null) {
             counts.put('Q', counts.get('Q') - (counts.get('R') / 3));
         }
-        if()
+        int countZ = counts.getOrDefault('Z', 0);
+        int countSTY = counts.getOrDefault('S', 0) + counts.getOrDefault('T', 0) + counts.getOrDefault('Y', 0);
+        int countX = counts.getOrDefault('X', 0);
+        if(countZ > 0) {
+            countZ % 3
+        }
     }
 
     private int calculatePrice(Map<Character, Integer> counts) {
@@ -90,3 +95,4 @@ public class CheckoutSolution {
         return res;
     }
 }
+
