@@ -87,38 +87,10 @@ public class CheckoutSolution {
         int countZ = counts.getOrDefault('Z', 0);
         int countSTY = counts.getOrDefault('S', 0) + counts.getOrDefault('T', 0) + counts.getOrDefault('Y', 0);
         int countX = counts.getOrDefault('X', 0);
-        if(countX > 0 && countSTY > 0 && countZ > 0) {
+        if(countZ > 0) {
             res += (countZ / 3) * 45;
-            countSTY += countZ % 3;
-            res += (countSTY / 3) * 45;
-            countX += countSTY % 3;
-            res += (countX / 3) * 45 + (countX % 3) * 17;
-        } else if(countX == 0 && countSTY > 0 && countZ > 0) {
-            res += (countZ / 3) * 45;
-            countSTY += countZ % 3;
-            res += (countSTY / 3) * 45 + (countSTY % 3) * 20;
-        } else if(countX > 0 && countSTY == 0 && countZ > 0) {
-            res += (countZ / 3) * 45;
-            countX += countZ % 3;
-            res += (countX / 3) * 45 + (countX % 3) * 17;
-        } else if(countX > 0 && countSTY > 0 && countZ == 0) {
-            res += (countSTY / 3) * 45;
-            countX += countSTY % 3;
-            res += (countX / 3) * 45 + (countX % 3) * 17;
-        } else if(countX == 0 && countSTY == 0 && countZ > 0){
-            res += (countZ / 3) * 45 + (countX % 3) * 21;;
-        } else if(countX == 0 && countSTY > 0 && countZ == 0){
-            res += (countSTY / 3) * 45 + (countSTY % 3) * 20;;
-        } else if(countX > 0 && countSTY == 0 && countZ == 0){
-            res += (countX / 3) * 45 + (countX % 3) * 17;;
+            countSTY += countZ  3
         }
         return res;
     }
 }
-
-
-
-
-
-
-
