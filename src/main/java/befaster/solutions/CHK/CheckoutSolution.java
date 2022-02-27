@@ -33,12 +33,6 @@ public class CheckoutSolution {
         if(counts.get('Q') != null && counts.get('R') != null) {
             counts.put('Q', counts.get('Q') - (counts.get('R') / 3));
         }
-        int countZ = counts.getOrDefault('Z', 0);
-        int countSTY = counts.getOrDefault('S', 0) + counts.getOrDefault('T', 0) + counts.getOrDefault('Y', 0);
-        int countX = counts.getOrDefault('X', 0);
-        if(countZ > 0) {
-            countZ % 3
-        }
     }
 
     private int calculatePrice(Map<Character, Integer> counts) {
@@ -52,7 +46,7 @@ public class CheckoutSolution {
                 res += count5A * 200 + count3A * 130 + restA * 50;
             } else if(sku == 'B') {
                 res += (count / 2) * 45 + (count % 2) * 30;
-            } else if(sku == 'C' || sku == 'G' || sku == 'T' || sku == 'W') {
+            } else if(sku == 'C' || sku == 'G' || sku == 'W') {
                 res += 20 * count;
             } else if(sku == 'D' || sku == 'M'){
                 res += 15 * count;
@@ -71,18 +65,16 @@ public class CheckoutSolution {
                 res += 60 * count;
             } else if(sku == 'K'){
                 res += (count / 2) * 150 + (count % 2) * 80;
-            } else if(sku == 'L' || sku == 'X'){
+            } else if(sku == 'L'){
                 res += 90 * count;
-            } else if(sku == 'O' || sku == 'Y'){
+            } else if(sku == 'O'){
                 res += 10 * count;
             } else if(sku == 'P'){
                 res += (count / 5) * 200 + (count % 5) * 50;
             } else if(sku == 'Q'){
                 res += (count / 3) * 80 + (count % 3) * 30;
-            } else if(sku == 'R' || sku == 'Z'){
+            } else if(sku == 'R'){
                 res += 50 * count;
-            } else if(sku == 'S'){
-                res += 30 * count;
             } else if(sku == 'U'){
                 res += (count / 4) * 120 + (count % 4) * 40;
             } else if(sku == 'V'){
@@ -92,7 +84,15 @@ public class CheckoutSolution {
                 res += count3V * 130 + count2V * 90 + restH * 50;
             }
         }
+        int countZ = counts.getOrDefault('Z', 0);
+        int countSTY = counts.getOrDefault('S', 0) + counts.getOrDefault('T', 0) + counts.getOrDefault('Y', 0);
+        int countX = counts.getOrDefault('X', 0);
+        if(countZ > 0) {
+            res += (countZ / 3) * 45;
+            
+        }
         return res;
     }
 }
+
 
