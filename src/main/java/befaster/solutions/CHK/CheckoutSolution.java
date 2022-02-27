@@ -33,6 +33,7 @@ public class CheckoutSolution {
         if(counts.get('Q') != null && counts.get('R') != null) {
             counts.put('Q', counts.get('Q') - (counts.get('R') / 3));
         }
+        if()
     }
 
     private int calculatePrice(Map<Character, Integer> counts) {
@@ -89,6 +90,7 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
 
 
