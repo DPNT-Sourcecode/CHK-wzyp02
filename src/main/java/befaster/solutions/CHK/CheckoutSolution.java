@@ -87,7 +87,7 @@ public class CheckoutSolution {
         int countZ = counts.getOrDefault('Z', 0);
         int countSTY = counts.getOrDefault('S', 0) + counts.getOrDefault('T', 0) + counts.getOrDefault('Y', 0);
         int countX = counts.getOrDefault('X', 0);
-        if(countX > 0) {
+        if(countX > 0 && countSTY > 0 && countZ > 0) {
             res += (countZ / 3) * 45;
             countSTY += countZ % 3;
             res += (countSTY / 3) * 45;
@@ -103,6 +103,7 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
 
 
