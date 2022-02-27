@@ -8,29 +8,7 @@ public class CheckoutSolution {
         Map<Character, Integer> counts = new HashMap<>();
         if(countItemsInBasket(counts, skus) == -1) return -1;
         recalculateCountOnOffer(counts);
-        int res = 0;
-        for(char sku : counts.keySet()) {
-            int count = counts.get(sku);
-            if(sku == 'A') {
-                int count5 =  count / 5;
-                int count3 = (count - count5 * 5) / 3;
-                int rest = count - count5 * 5 - count3 * 3;
-                res += count5 * 200 + count3 * 130 + rest * 50;
-            } else if(sku == 'B') {
-                if(count > 0) {
-                    res += (count / 2) * 45 + (count % 2) * 30;
-                }
-            } else if(sku == 'C') {
-                res += 20 * count;
-            } else if(sku == 'D'){
-                res += 15 * count;
-            } else if(sku == 'E'){
-                res += 40 * count;
-            } else {
-                res += (count / 3) * 20 + (count % 3) * 10;
-            }
-        }
-        return res;
+        return calculatePrice(counts);
     }
 
     private int countItemsInBasket(Map<Character, Integer> counts, String skus) {
@@ -57,7 +35,7 @@ public class CheckoutSolution {
         }
     }
 
-    private void calculatePrice(Map<Character, Integer> counts) {
+    private int calculatePrice(Map<Character, Integer> counts) {
         int res = 0;
         for(char sku : counts.keySet()) {
             int count = counts.get(sku) > 0 ? counts.get(sku) : 0;
@@ -68,7 +46,7 @@ public class CheckoutSolution {
                 res += count5A * 200 + count3A * 130 + restA * 50;
             } else if(sku == 'B') {
                 res += (count / 2) * 45 + (count % 2) * 30;
-            } else if(sku == 'C' || sku == 'G' || sku == 'S') {
+            } else if(sku == 'C' || sku == 'G' || sku == 'T' || sku == 'W') {
                 res += 20 * count;
             } else if(sku == 'D' || sku == 'M'){
                 res += 15 * count;
@@ -87,23 +65,30 @@ public class CheckoutSolution {
                 res += 60 * count;
             } else if(sku == 'K'){
                 res += (count / 2) * 150 + (count % 2) * 80;
-            } else if(sku == 'L'){
+            } else if(sku == 'L' || sku == 'X'){
                 res += 90 * count;
-            } else if(sku == 'O'){
+            } else if(sku == 'O' || sku == 'Y'){
                 res += 10 * count;
             } else if(sku == 'P'){
                 res += (count / 5) * 200 + (count % 5) * 50;
             } else if(sku == 'Q'){
                 res += (count / 3) * 80 + (count % 3) * 50;
-            } else if(sku == 'R'){
+            } else if(sku == 'R' || sku == 'Z'){
                 res += 50 * count;
             } else if(sku == 'S'){
                 res += 30 * count;
-            } else if(sku == 'S'){
-                res += 30 * count;
+            } else if(sku == 'U'){
+                res += (count / 4) * 120 + (count % 4) * 40;
+            } else if(sku == 'V'){
+                int count3V =  count / 3;
+                int count2V =  (count - count3V * 3) / 2;
+                int restH = count - count3V * 3 - count2V * 2;
+                res += count3V * 130 + count2V * 90 + restH * 50;
             }
         }
+        return res;
     }
 }
+
 
 
