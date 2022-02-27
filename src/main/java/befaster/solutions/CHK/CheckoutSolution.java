@@ -33,11 +33,14 @@ public class CheckoutSolution {
                 res += 20 * count;
             } else if(sku == 'D'){
                 res += 15 * count;
-            } else {
+            } else if(sku == 'E'){
                 res += 40 * count;
+            } else {
+                res += (count / 3) * 20 + (count % 3) * 10;
             }
         }
         return res;
     }
 }
+
 

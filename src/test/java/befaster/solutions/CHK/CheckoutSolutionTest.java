@@ -14,7 +14,7 @@ public class CheckoutSolutionTest {
 
 	@Test
 	public void testInvalidInput() {
-		Assert.assertEquals(Integer.valueOf(-1), checkoutSolution.checkout("F"));
+		Assert.assertEquals(Integer.valueOf(-1), checkoutSolution.checkout("-"));
 	}
 
 	@Test
@@ -31,4 +31,15 @@ public class CheckoutSolutionTest {
 	public void testCheckout2() {
 		Assert.assertEquals(Integer.valueOf(180 + 15 + 80), checkoutSolution.checkout("AAAADEE"));
 	}
+
+	@Test
+	public void testCheckout3() {
+		Assert.assertEquals(Integer.valueOf(20), checkoutSolution.checkout("FF"));
+	}
+
+	@Test
+	public void testCheckout4() {
+		Assert.assertEquals(Integer.valueOf(40 + 10), checkoutSolution.checkout("FFFFFFF"));
+	}
 }
+
