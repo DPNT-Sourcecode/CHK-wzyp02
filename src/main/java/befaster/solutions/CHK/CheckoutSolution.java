@@ -64,7 +64,7 @@ public class CheckoutSolution {
             } else if(sku == 'J'){
                 res += 60 * count;
             } else if(sku == 'K'){
-                res += (count / 2) * 150 + (count % 2) * 80;
+                res += (count / 2) * 120 + (count % 2) * 70;
             } else if(sku == 'L'){
                 res += 90 * count;
             } else if(sku == 'O'){
@@ -106,5 +106,6 @@ public class CheckoutSolution {
         return res;
     }
 }
+
 
 
